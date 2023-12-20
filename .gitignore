@@ -296,6 +296,8 @@ package
 ### Ignore all files that could be used to test your code and
 ### you wouldn't want to push
 
+test-results/
+
 # Reference https://en.wikipedia.org/wiki/Metasyntactic_variable
 
 # Most common
