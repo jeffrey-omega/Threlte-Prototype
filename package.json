@@ -1,5 +1,5 @@
 {
-	"name": "sveltekit-skeleton-project-template",
+	"name": "3d-interactive-map",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -19,6 +19,7 @@
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.2",
 		"@sveltejs/vite-plugin-svelte": "^3.0.1",
+		"@types/three": "^0.159.0",
 		"@typescript-eslint/eslint-plugin": "^6.14.0",
 		"@typescript-eslint/parser": "^6.14.0",
 		"eslint": "^8.56.0",
@@ -26,6 +27,7 @@
 		"eslint-plugin-svelte": "^2.35.1",
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
+		"sass": "^1.69.5",
 		"svelte": "^4.2.8",
 		"svelte-check": "^3.6.2",
 		"tslib": "^2.6.2",
@@ -33,5 +35,8 @@
 		"vite": "^5.0.10",
 		"vitest": "^1.0.4"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"three": "^0.159.0"
+	}
 }
