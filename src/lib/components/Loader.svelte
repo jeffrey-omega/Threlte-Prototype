@@ -3,25 +3,27 @@
 	import { tweened } from 'svelte/motion';
 	import { fade } from 'svelte/transition';
 
-	const { progress } = useProgress();
+	const { active, progress } = useProgress();
 	const tweenedProgress = tweened($progress, {
 		duration: 800
 	});
 	$: tweenedProgress.set($progress);
 </script>
 
-{#if $tweenedProgress < 1}
-	<div
-		transition:fade|local={{
-			duration: 200
-		}}
-		class="wrapper"
-	>
-		<p class="loading">Loading</p>
-		<div class="bar-wrapper">
-			<div class="bar" style="width: {$tweenedProgress * 100}%" />
+{#if $active}
+	{#if $tweenedProgress < 1}
+		<div
+			transition:fade|local={{
+				duration: 200
+			}}
+			class="wrapper"
+		>
+			<p class="loading">Loading</p>
+			<div class="bar-wrapper">
+				<div class="bar" style="width: {$tweenedProgress * 100}%" />
+			</div>
 		</div>
-	</div>
+	{/if}
 {/if}
 
 <style lang="scss">
@@ -31,13 +33,14 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		background-color: white;
+		background: rgb(13, 19, 32);
+		background: linear-gradient(180deg, rgba(13, 19, 32, 1) 0%, rgba(8, 12, 21, 1) 100%);
 		display: flex;
 		flex-direction: column;
 		gap: 0.25rem;
 		align-items: center;
 		justify-content: center;
-		color: black;
+		color: purple;
 	}
 	.loading {
 		font-size: 0.875rem;
@@ -46,11 +49,11 @@
 	.bar-wrapper {
 		width: 33.333333%;
 		height: 10px;
-		border: 1px solid black;
+		border: 1px solid purple;
 		position: relative;
 	}
 	.bar {
 		height: 100%;
-		background-color: black;
+		background-color: purple;
 	}
 </style>
